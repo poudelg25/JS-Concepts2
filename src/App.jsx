@@ -4,8 +4,22 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
+  const products = [{name: 'Chiros', price: 4.99, quantity: 2}, {name: 'Bread', price: 2.49, quantity: 4}, {name: 'CocoWater', price: 1.99, quantity: 15}]
   const [count, setCount] = useState(0)
 
+  function calculateTotalPrice(products){
+    const totalPrice = products.price * products.quantity
+    return totalPrice
+
+  }
+
+  function printProductInfo(products){
+    console.log("Product Name: ", products.name)
+    console.log("Product Price Rate: ", products.price)
+    console.log("Product Quantity: ", products.quantity)
+    console.log("Product Total Price: ", calculateTotalPrice(products))
+  }
+printProductInfo(products[2])
   return (
     <>
       <div>
